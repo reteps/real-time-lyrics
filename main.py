@@ -1,13 +1,16 @@
 from acrcloud.recognizer import ACRCloudRecognizer
-import pyaudio
+import sounddevice as sd
 import wave
+import scipy.io.wavfile as wavf
+from synced_lyric_sources import get_lyrics
+import json
+from timeit import default_timer as timer
+import time
 
 RATE = 44100
-FORMAT = pyaudio.paInt16
 CHANNELS = 1
 CHUNK = 1024
 SECONDS = 10
-
 def save_frames_to_wav(filename, frames):
     waveFile = wave.open(filename, 'wb')
     waveFile.setnchannels(CHANNELS)
@@ -15,9 +18,7 @@ def save_frames_to_wav(filename, frames):
     waveFile.setframerate(RATE)
     waveFile.writeframes(b''.join(frames))
     waveFile.close()
-def callback(input_data, frame_count, time_info, flags):
 
-    return input_data, pyaudio.paContinue
 if __name__ == '__main__':
     config = {
         'host': 'identify-eu-west-1.acrcloud.com',
@@ -26,17 +27,31 @@ if __name__ == '__main__':
         'timeout': 10
     }
 
-    audio = pyaudio.PyAudio()
-    stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK, input_device_index=1)
-    #, stream_callback=callback
-    frames = []
-    for _ in range(RATE // (CHUNK * SECONDS)):
-        data = stream.read(CHUNK)
-        frames.append(data)
-    stream.stop_stream()
-    stream.close()
-    audio.terminate()
+    data = sd.rec(int(SECONDS * RATE), samplerate=RATE, channels=2)
+    sd.wait()
+    print('Snip Found')
+    wavf.write('out.wav', RATE, data)
+    re = ACRCloudRecognizer(config)
+    results = json.loads(re.recognize_by_file('out.wav', 0))
+    response_time = results['cost_time']
+    load_lyric_start = timer()
+    for result in results['metadata']['music']:
+        artist = result['artists'][0]['name'].split(';')[0]
+        song = result['title']
+        current_time = result['play_offset_ms'] / 1000
+        print('Possible song -', song, artist)
+        lyrics = get_lyrics(artist, song)
+        if lyrics != None:
+            break
+    lyric_load_time = timer() - load_lyric_start
 
-    save_frames_to_wav('out.wav', frames)
-
-    # re = ACRCloudRecognizer(config)
+    lyric_start_time = current_time + response_time + lyric_load_time
+    current_lyric_time = lyric_start_time
+    for i in range(len(lyrics) - 1):
+        lyric = lyrics[i]
+        if lyric[0] < current_lyric_time:
+            print(lyric[1])
+        else:
+            time.sleep(lyric[0] - current_lyric_time + .01)
+            print(lyrics[i+1][1])
+            current_lyric_time += lyric[0] - current_lyric_time + .01
