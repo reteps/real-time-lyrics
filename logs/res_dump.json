@@ -8,142 +8,193 @@
     "music": [
       {
         "external_ids": {},
-        "play_offset_ms": 74900,
-        "title": "Useless",
         "external_metadata": {
           "spotify": {
             "album": {
-              "name": "Old School Bumps",
-              "id": "2kIthCOQuOp6B68wQE2jZC"
+              "name": "Best 00s R'n'B"
             },
             "artists": [
               {
-                "name": "Olsc",
-                "id": "4OY8nSDTdJbInmPy7sFiNT"
+                "name": "Iyaz"
               }
             ],
             "track": {
-              "name": "Useless",
-              "id": "1iyL2h8JUNpnVaMLuhgvkN"
+              "name": "Replay",
+              "id": "6xiTjxBVd1BPQ40guFWmEt"
             }
           }
         },
-        "release_date": "2017-10-09",
-        "score": 100,
-        "label": "723352 Records DK",
-        "duration_ms": 80065,
-        "album": {
-          "name": "Old School Bumps"
-        },
-        "acrid": "afbe4d32e80c3ee183dbaabdcb4917b2",
-        "result_from": 3,
+        "title": "Replay",
         "artists": [
           {
-            "name": "Olsc"
-          }
-        ]
-      },
-      {
-        "external_ids": {},
-        "external_metadata": {
-          "spotify": {
-            "album": {
-              "name": "Lazy Sunday: The Best Of Now, Then And Inbetween",
-              "id": "53CcU3ezMBTKA0OaU76yCC"
-            },
-            "artists": [
-              {
-                "name": "Gorillaz",
-                "id": "3AA28KZvwAUcZuOKwyblJQ"
-              }
-            ],
-            "track": {
-              "name": "Clint Eastwood - Original Mix Clean Edit",
-              "id": "0TdP50dxBM62cWvnocDv5r"
-            }
-          }
-        },
-        "title": "Clint Eastwood",
-        "album": {
-          "name": "Gorillaz"
-        },
-        "artists": [
-          {
-            "name": "Gorillaz"
+            "name": "Iyaz"
           }
         ],
         "contributors": {
-          "lyricists": [
-            "Damon Albarn",
-            "Teren Devlon Jones",
-            "Jamie Hewlett"
-          ],
           "composers": [
-            "Gorillaz",
-            "Murdoc Niccals",
-            "2D",
-            "Del the Funky Homosapien"
+            "Jonathan Rotem",
+            "K. Smith"
+          ],
+          "lyricists": [
+            "Kisean Anderson",
+            "Jonathan Rotem",
+            "Jason Desrouleaux",
+            "Keidran Jones",
+            "Timothy Theron",
+            "Thomas Theron"
           ]
         },
-        "label": "Parlophone UK",
-        "duration_ms": 340920,
-        "score": 100,
-        "play_offset_ms": 105820,
-        "release_date": "2001-03-26",
+        "label": "Rhino",
+        "duration_ms": 182510,
+        "play_offset_ms": 14500,
+        "language": "en",
+        "release_date": "2019-03-29",
+        "acrid": "42108f1f5530e1da520ff1f0cd596022",
         "lyrics": {
           "copyrights": [
-            "Universal Music Publishing Group"
+            "Sony/ATV Music Publishing LLC",
+            "Universal Music Publishing Group",
+            "BMG Rights Management"
           ]
         },
         "genres": [
           {
-            "name": "Hip Hop"
+            "name": "Pop"
           }
         ],
+        "album": {
+          "name": "Happy Songs"
+        },
         "result_from": 3,
-        "acrid": "93af82a4486b730c0ff8cd99b135d950"
+        "score": 100
+      },
+      {
+        "external_ids": {},
+        "acrid": "4287cad55834f76575302f9c5139fba3",
+        "external_metadata": {
+          "spotify": {
+            "album": {
+              "name": "Now! 15"
+            },
+            "artists": [
+              {
+                "name": "Iyaz"
+              }
+            ],
+            "track": {
+              "name": "Replay",
+              "id": "3VkC0vOiITyJIjUeb4OF5W"
+            }
+          }
+        },
+        "title": "Replay",
+        "album": {
+          "name": "Replay EP"
+        },
+        "artists": [
+          {
+            "name": "Iyaz"
+          }
+        ],
+        "contributors": {
+          "composers": [
+            "Jonathan Rotem",
+            "K. Smith"
+          ],
+          "lyricists": [
+            "Kisean Anderson",
+            "Jonathan Rotem",
+            "Jason Desrouleaux",
+            "Keidran Jones",
+            "Timothy Theron",
+            "Thomas Theron"
+          ]
+        },
+        "label": "Time Is Money/Beluga Heights/Reprise",
+        "duration_ms": 181000,
+        "score": 100,
+        "play_offset_ms": 14480,
+        "release_date": "2009-12-11",
+        "genres": [
+          {
+            "name": "Pop"
+          }
+        ],
+        "lyrics": {
+          "copyrights": [
+            "Sony/ATV Music Publishing LLC",
+            "Universal Music Publishing Group",
+            "BMG Rights Management"
+          ]
+        },
+        "result_from": 3
       },
       {
         "external_ids": {},
         "contributors": {
-          "lyricists": [
-            "Damon Albarn",
-            "Teren Devlon Jones",
-            "Jamie Hewlett"
-          ],
           "composers": [
-            "Gorillaz",
-            "Murdoc Niccals",
-            "2D",
-            "Del the Funky Homosapien"
+            "Jonathan Rotem",
+            "K. Smith"
+          ],
+          "lyricists": [
+            "Jason Derulo",
+            "Jonathan \u201cJ.R.\u201d Rotem",
+            "Theron Thomas",
+            "Sean Kingston",
+            "Iyaz",
+            "Timothy Thomas"
           ]
         },
-        "label": "Rhino",
-        "duration_ms": 332180,
+        "label": "Time Is Money/Beluga Heights/Reprise",
         "score": 100,
-        "play_offset_ms": 101920,
-        "external_metadata": {},
+        "play_offset_ms": 77760,
+        "release_date": "2009-12-11",
+        "genres": [
+          {
+            "name": "Pop"
+          }
+        ],
+        "duration_ms": 181000,
+        "title": "Replay",
+        "acrid": "9f18d07736efb2551b6207755d79399f",
         "lyrics": {
           "copyrights": [
-            "Universal Music Publishing Group"
+            "Sony/ATV Music Publishing LLC",
+            "Universal Music Publishing Group",
+            "BMG Rights Management"
           ]
         },
-        "release_date": "2015-02-15",
-        "title": "Clint Eastwood",
-        "album": {
-          "name": "Best Of 2001-2012"
+        "external_metadata": {
+          "spotify": {
+            "album": {
+              "name": "Black Summer 2010",
+              "id": "3Gfn7TejeVzwNZWpPYMvGJ"
+            },
+            "artists": [
+              {
+                "name": "Iyaz",
+                "id": "5tKXB9uuebKE34yowVaU3C"
+              }
+            ],
+            "track": {
+              "name": "Replay",
+              "id": "7wwqIlcVHOgGwPQ5eXbWth"
+            }
+          }
         },
-        "acrid": "fa60c9ce7e26823566ce3fc24f356e45",
+        "album": {
+          "name": "Replay EP"
+        },
         "result_from": 3,
         "artists": [
           {
-            "name": "Gorillaz"
+            "name": "Iyaz"
           }
         ]
       }
     ],
-    "timestamp_utc": "2021-01-08 06:09:25"
+    "timestamp_utc": "2021-01-08 23:24:54"
   },
-  "cost_time": 0.046000003814697,
+  "cost_time": 0.10699987411499,
   "result_type": 0
 }
