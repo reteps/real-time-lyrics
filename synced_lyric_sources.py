@@ -41,8 +41,10 @@ def valid_lyric_line(l):
     return ']' in l and len(l[l.index(']')+1:]) > 0 and l[1].isdigit() and 'RentAnAdviser.com' not in l
 def get_lyrics(artist, song):
     for source in SOURCES:
-        lrc, urls, service_name, success = source(artist, song)
+        lrc, url, service_name, success = source(artist, song)
         if success:
+            if 'Instrumental' in lrc:
+                continue
             lrc = [l.strip() for l in lrc.split('\n')]
             valid_lines = list(filter(valid_lyric_line, lrc))
             time_stamped_lines = []
@@ -52,8 +54,8 @@ def get_lyrics(artist, song):
                 m, s = map(float, parts[0][1:].split(':'))
                 time = round(m * 60 + s, 4)
                 time_stamped_lines.append([time, lyric])
-            return time_stamped_lines
-    return None
+            return time_stamped_lines, url
+    return None, None
 def MegalobizSource(artist, song):
     service_name = "Megalobiz"
     url = ""

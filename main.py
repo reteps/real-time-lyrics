@@ -40,8 +40,9 @@ if __name__ == '__main__':
         song = result['title']
         current_time = result['play_offset_ms'] / 1000
         print('Possible song -', song, artist)
-        lyrics = get_lyrics(artist, song)
+        lyrics, url = get_lyrics(artist, song)
         if lyrics != None:
+            print('Found URL:', url)
             break
     lyric_load_time = timer() - load_lyric_start
 
@@ -49,9 +50,11 @@ if __name__ == '__main__':
     current_lyric_time = lyric_start_time
     for i in range(len(lyrics) - 1):
         lyric = lyrics[i]
-        if lyric[0] < current_lyric_time:
-            print(lyric[1])
-        else:
+        if lyric[0] > current_lyric_time: # If ahead, sleep
             time.sleep(lyric[0] - current_lyric_time + .01)
-            print(lyrics[i+1][1])
             current_lyric_time += lyric[0] - current_lyric_time + .01
+            lyric = lyrics[i+1] # Print next line
+
+        m,s = divmod(int(lyrics[i+1][0]), 60)
+        ts = f'{m}:{s:02}'
+        print(ts, lyrics[i+1][1])
