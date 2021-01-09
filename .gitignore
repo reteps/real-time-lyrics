@@ -3,4 +3,3 @@ out.wav
 *.lrc
 .env
 logs/res_dump.json
-out.wav

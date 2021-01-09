@@ -10,6 +10,7 @@ def get_lyrics(artist, song):
         if res:
             return res, engine.__name__
     return None, None
+
 def sogeci(artist, song):
     artist_fixed = re.sub(r'\W+', '', artist)
     artist_page = f'http://www.sogeci.net/geshou/{artist_fixed}.html'
@@ -172,4 +173,38 @@ def megalobiz(artist, song):
         lrc = soup.find("div", class_="lyrics_details").span.get_text()
         return lrc
     return None
-ENGINES = [sogeci, mooflac, syair] # rentanadvisor, megalobiz]
+
+class LyricLineClone:
+    def __init__(self, json):
+        self.time = int(json['milliseconds']) / 1000
+        self.time_str = json['lrc_timestamp']
+        self.text = json['line']
+        self.duration = int(json['duration']) / 1000
+    def __str__(self):
+        return f'{self.time_str}{self.text}'
+def lyricfind(artist, song):
+    # Thanks Alan96320!!!! this dude clutching up
+    # https://github.com/alan96320/camocist-radio/blob/7adcc4f0482b395d97ce296745fb475be7f98052/app/Http/Controllers/Frontend/ApiController.php#L141
+    base_params = {
+        'apikey': 'ac0974dcf282f1c67c64342159e42c05',
+        'reqtype': 'default',
+        'output': 'json',
+        'territory': 'US',
+        'format': 'lrc',
+        'lrckey': 'd829393a83c0c0434cef9d451310be4b'
+    }
+    query = {
+        'trackid': f'artistname:{artist},trackname:{song}'
+    }
+    requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += 'HIGH:!DH:!aNULL'
+    res = requests.get('https://api.lyricfind.com/lyric.do', {**base_params, **query}).json()
+    if not 'track' in res:
+        print(res)
+        return None
+    res = res['track']
+    if res['has_lrc']:
+        return [
+            LyricLineClone(line) for line in filter(lambda x:len(x['line'])>0, res['lrc'])
+        ]
+    return None
+ENGINES = [lyricfind, sogeci, mooflac, syair] # rentanadvisor, megalobiz]

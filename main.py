@@ -103,7 +103,10 @@ if __name__ == '__main__':
             lyrics, engine = get_lyrics(artist, song)
             if lyrics:
                 print(f'Found Using Engine "{engine}"')
-                subs = pylrc.parse(lyrics)
+                if isinstance(lyrics, list):
+                    subs = lyrics
+                else:
+                    subs = pylrc.parse(lyrics)
                 break
         if subs is None:
             input('No matches. Next song?')
@@ -114,6 +117,8 @@ if __name__ == '__main__':
         lookahead_time = 2
         song_ended = timer()
         for line in subs:
+            # if hasattr(line, 'duration'):
+            #     lookahead_time = line.duration
             time_to_line = line.time - current_time - lookahead_time
             if time_to_line > 0: # Print the line
                 time.sleep(time_to_line)
