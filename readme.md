@@ -1,5 +1,6 @@
 # Real time lyric detection
 
+![godzilla gif](godzilla.gif)
 # Setup
 
 ```
@@ -32,6 +33,7 @@ These sites are not used, but are implemented. I have found them to have minimal
 
 If you have access to it, I reccommend using the musixmatch subtitle service.
 
+Next, the song is synced up the lyrics and printed out `2` seconds ahead of when the lyrics are actually spoken.
 
 ### Current bugs
 
@@ -40,3 +42,9 @@ If you have access to it, I reccommend using the musixmatch subtitle service.
 + Sampling can lead to the program searching for a very old or relatively unknown song before the main song.
 
 + The original swear words cannot be recovered if the word is completely starred out. E.g. `****` does not work, but `d**k` -> `dick`.
+
+### Other quirks
+
+The `out.wav` file and `logs/res_dump.json` are written to the current directory every record / identification cycle.
+
+I am using my personal login for the `mooflac.com` lyric site. Maybe don't change it. Otherwise I will have to force users to create their own account for the site.
