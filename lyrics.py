@@ -34,7 +34,6 @@ def sogeci(artist, song):
 def syair(artist, song):
     UA = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Safari/537.36'}
     name_normalized = ' '.join(re.sub(r'\W+',' ', artist).split(' '))
-    print(name_normalized)
     search_page = requests.get("https://www.syair.info/search", params={
     "q": f'{name_normalized} {song}'
     }, headers = UA).text

@@ -7,7 +7,11 @@ import json
 from timeit import default_timer as timer
 import time
 import pylrc
+import os
 import re
+from dotenv import load_dotenv
+load_dotenv()
+
 RATE = 44100
 CHUNK = 1024
 SECONDS = 10
@@ -37,6 +41,7 @@ fuckin'
 motherfucker
 motherfucka
 fuckers
+faggots
 niggas
 nigga
 niggas
@@ -68,11 +73,10 @@ def uncensor(word):
 if __name__ == '__main__':
     config = {
         'host': 'identify-eu-west-1.acrcloud.com',
-        'access_key': 'fe9e8e87f476705b22cd4cd413e027a2',
-        'access_secret': 'DWBx6uRqVbLYzzI4NDChJid4OTS3T2m7lf2gAob0',
+        'access_key': os.getenv('ACR_ACCESS_KEY'),
+        'access_secret': os.getenv('ACR_ACCESS_SECRET'),
         'timeout': 10
     }
-
 
     while True:
         while True:

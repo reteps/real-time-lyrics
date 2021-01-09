@@ -1,0 +1,8 @@
+scipy
+sounddevice
+pylrc
+dotenv
+bs4
+lxml
+requests
+acrcloud

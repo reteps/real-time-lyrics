@@ -8,193 +8,62 @@
     "music": [
       {
         "external_ids": {},
-        "external_metadata": {
-          "spotify": {
-            "album": {
-              "name": "Best 00s R'n'B"
-            },
-            "artists": [
-              {
-                "name": "Iyaz"
-              }
-            ],
-            "track": {
-              "name": "Replay",
-              "id": "6xiTjxBVd1BPQ40guFWmEt"
-            }
-          }
-        },
-        "title": "Replay",
-        "artists": [
-          {
-            "name": "Iyaz"
-          }
-        ],
         "contributors": {
           "composers": [
-            "Jonathan Rotem",
-            "K. Smith"
-          ],
-          "lyricists": [
-            "Kisean Anderson",
-            "Jonathan Rotem",
-            "Jason Desrouleaux",
-            "Keidran Jones",
-            "Timothy Theron",
-            "Thomas Theron"
+            "DJ Lil Sprite"
           ]
         },
-        "label": "Rhino",
-        "duration_ms": 182510,
-        "play_offset_ms": 14500,
-        "language": "en",
-        "release_date": "2019-03-29",
-        "acrid": "42108f1f5530e1da520ff1f0cd596022",
-        "lyrics": {
-          "copyrights": [
-            "Sony/ATV Music Publishing LLC",
-            "Universal Music Publishing Group",
-            "BMG Rights Management"
-          ]
-        },
-        "genres": [
-          {
-            "name": "Pop"
-          }
-        ],
-        "album": {
-          "name": "Happy Songs"
-        },
-        "result_from": 3,
-        "score": 100
-      },
-      {
-        "external_ids": {},
-        "acrid": "4287cad55834f76575302f9c5139fba3",
-        "external_metadata": {
-          "spotify": {
-            "album": {
-              "name": "Now! 15"
-            },
-            "artists": [
-              {
-                "name": "Iyaz"
-              }
-            ],
-            "track": {
-              "name": "Replay",
-              "id": "3VkC0vOiITyJIjUeb4OF5W"
-            }
-          }
-        },
-        "title": "Replay",
-        "album": {
-          "name": "Replay EP"
-        },
-        "artists": [
-          {
-            "name": "Iyaz"
-          }
-        ],
-        "contributors": {
-          "composers": [
-            "Jonathan Rotem",
-            "K. Smith"
-          ],
-          "lyricists": [
-            "Kisean Anderson",
-            "Jonathan Rotem",
-            "Jason Desrouleaux",
-            "Keidran Jones",
-            "Timothy Theron",
-            "Thomas Theron"
-          ]
-        },
-        "label": "Time Is Money/Beluga Heights/Reprise",
-        "duration_ms": 181000,
+        "label": "709264 Records DK",
+        "duration_ms": 456000,
         "score": 100,
-        "play_offset_ms": 14480,
-        "release_date": "2009-12-11",
-        "genres": [
-          {
-            "name": "Pop"
-          }
-        ],
-        "lyrics": {
-          "copyrights": [
-            "Sony/ATV Music Publishing LLC",
-            "Universal Music Publishing Group",
-            "BMG Rights Management"
-          ]
-        },
-        "result_from": 3
-      },
-      {
-        "external_ids": {},
-        "contributors": {
-          "composers": [
-            "Jonathan Rotem",
-            "K. Smith"
-          ],
-          "lyricists": [
-            "Jason Derulo",
-            "Jonathan \u201cJ.R.\u201d Rotem",
-            "Theron Thomas",
-            "Sean Kingston",
-            "Iyaz",
-            "Timothy Thomas"
-          ]
-        },
-        "label": "Time Is Money/Beluga Heights/Reprise",
-        "score": 100,
-        "play_offset_ms": 77760,
-        "release_date": "2009-12-11",
-        "genres": [
-          {
-            "name": "Pop"
-          }
-        ],
-        "duration_ms": 181000,
-        "title": "Replay",
-        "acrid": "9f18d07736efb2551b6207755d79399f",
-        "lyrics": {
-          "copyrights": [
-            "Sony/ATV Music Publishing LLC",
-            "Universal Music Publishing Group",
-            "BMG Rights Management"
-          ]
-        },
-        "external_metadata": {
-          "spotify": {
-            "album": {
-              "name": "Black Summer 2010",
-              "id": "3Gfn7TejeVzwNZWpPYMvGJ"
-            },
-            "artists": [
-              {
-                "name": "Iyaz",
-                "id": "5tKXB9uuebKE34yowVaU3C"
-              }
-            ],
-            "track": {
-              "name": "Replay",
-              "id": "7wwqIlcVHOgGwPQ5eXbWth"
-            }
-          }
-        },
+        "play_offset_ms": 146180,
+        "external_metadata": {},
+        "release_date": "2018-10-31",
+        "title": "Undaground Choppers 9 (feat. SplytSecond, Bonez, Big Loony, Fluenci, McDread, Snake Lucci, VBL, Ikonik, Tonik & Gho5t)",
+        "acrid": "4c568bd9eda826cb3eb61b30f752c103",
         "album": {
-          "name": "Replay EP"
+          "name": "Undaground Choppers 9 (feat. SplytSecond, Bonez, Big Loony, Fluenci, McDread, Snake Lucci, VBL, Ikonik, Tonik & Gho5t)"
         },
-        "result_from": 3,
+        "result_from": 1,
         "artists": [
           {
-            "name": "Iyaz"
+            "name": "DJ Lil Sprite"
+          },
+          {
+            "name": "Snake Lucci"
+          },
+          {
+            "name": "Tonik"
+          },
+          {
+            "name": "Gho5t"
+          },
+          {
+            "name": "Ikonik"
+          },
+          {
+            "name": "Big Loony"
+          },
+          {
+            "name": "McDread"
+          },
+          {
+            "name": "Splytsecond"
+          },
+          {
+            "name": "Fluenci"
+          },
+          {
+            "name": "Vbl"
+          },
+          {
+            "name": "Bonez"
           }
         ]
       }
     ],
-    "timestamp_utc": "2021-01-08 23:24:54"
+    "timestamp_utc": "2021-01-09 00:03:34"
   },
-  "cost_time": 0.10699987411499,
+  "cost_time": 0.38900017738342,
   "result_type": 0
 }
