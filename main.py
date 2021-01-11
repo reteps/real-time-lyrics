@@ -2,11 +2,10 @@ from acrcloud.recognizer import ACRCloudRecognizer
 import sounddevice as sd
 import wave
 import scipy.io.wavfile as wavf
-from lyrics import get_lyrics
 import json
 from timeit import default_timer as timer
 import time
-import pylrc
+from lrc_kit import ComboLyricProvider, SearchRequest
 import os
 import re
 from dotenv import load_dotenv
@@ -100,13 +99,10 @@ if __name__ == '__main__':
             offset_time = result['play_offset_ms'] / 1000
             run_time = result['duration_ms'] / 1000
             print(song, artist)
-            lyrics, engine = get_lyrics(artist, song)
-            if lyrics:
+            search_request = SearchRequest(artist, song)
+            subs, engine = ComboLyricProvider().search(search_request)
+            if subs:
                 print(f'Found Using Engine "{engine}"')
-                if isinstance(lyrics, list):
-                    subs = lyrics
-                else:
-                    subs = pylrc.parse(lyrics)
                 break
         if subs is None:
             input('No matches. Next song?')
@@ -116,14 +112,14 @@ if __name__ == '__main__':
         current_time = lyric_start_time
         lookahead_time = 2
         song_ended = timer()
-        for line in subs:
+        for line in subs.lyrics:
             # if hasattr(line, 'duration'):
             #     lookahead_time = line.duration
-            time_to_line = line.time - current_time - lookahead_time
+            time_to_line = line.time_seconds - current_time - lookahead_time
             if time_to_line > 0: # Print the line
                 time.sleep(time_to_line)
-                current_time = line.time - lookahead_time
-            m,s = divmod(int(line.time), 60)
+                current_time = line.time_seconds - lookahead_time
+            m,s = divmod(int(line.time_seconds), 60)
             ts = f'{m}:{s:02}'
             print(ts, ' '.join(uncensor(w) for w in line.text.split(' ')))
         current_time += lookahead_time

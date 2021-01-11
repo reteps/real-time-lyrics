@@ -17,24 +17,9 @@ Then simply
 $ python3 main.py
 ```
 
-
 The program will first record audio from the microphone, then identify it using [acrcloud](https://acrcloud.com).
 
-Next the identified song is looked up on `LRC` sites, such as:
-
-+ http://www.sogeci.net/
-+ https://www.mooflac.com/
-+ https://www.syair.info/
-
-These sites are not used, but are implemented. I have found them to have minimal LRCs that the previous 3 sites do not have.
-
-+ https://www.rentanadviser.com/
-+ https://www.megalobiz.com/
-
-If you have access to it, I reccommend using the musixmatch subtitle service.
-
-Next, the song is synced up the lyrics and printed out `2` seconds ahead of when the lyrics are actually spoken.
-
+Next the identified song is looked up on `LRC` sites
 ### Current bugs
 
 + If you find a snippet in a chorus, the lyric timing will be off if it identifies the chorus in another part of the song instead.
@@ -46,5 +31,3 @@ Next, the song is synced up the lyrics and printed out `2` seconds ahead of when
 ### Other quirks
 
 The `out.wav` file and `logs/res_dump.json` are written to the current directory every record / identification cycle.
-
-I am using my personal login for the `mooflac.com` lyric site. Maybe don't change it. Otherwise I will have to force users to create their own account for the site.

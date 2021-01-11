@@ -8,145 +8,68 @@
     "music": [
       {
         "external_ids": {},
-        "label": "Shady/Aftermath/Interscope Records",
-        "duration_ms": 210000,
-        "genres": [
-          {
-            "name": "Rap"
-          }
-        ],
-        "score": 100,
-        "external_metadata": {
-          "spotify": {
-            "album": {
-              "name": "Music To Be Murdered By"
-            },
-            "artists": [
-              {
-                "name": "Eminem"
-              },
-              {
-                "name": "Juice WRLD"
-              }
-            ],
-            "track": {
-              "name": "Godzilla (feat. Juice WRLD)",
-              "id": "7FIWs0pqAYbP91WWM0vlTQ"
-            }
-          }
-        },
-        "acrid": "63304b5c7815d6142c0b56043247a692",
-        "play_offset_ms": 210000,
-        "title": "Godzilla",
-        "release_date": "2020-01-16",
-        "album": {
-          "name": "Music To Be Murdered By"
-        },
-        "result_from": 3,
-        "artists": [
-          {
-            "name": "Eminem;Juice WRLD"
-          }
-        ]
-      },
-      {
-        "external_ids": {},
-        "external_metadata": {
-          "spotify": {
-            "album": {
-              "name": "Tha Carter V (Deluxe)",
-              "id": "4ljsev5vUnwB2BUFAMvwwy"
-            },
-            "artists": [
-              {
-                "name": "Lil Wayne",
-                "id": "55Aa2cqylxrFIXC767Z865"
-              },
-              {
-                "name": "Swizz Beatz",
-                "id": "2cADQgiLMjNhbsfeN52Bf3"
-              }
-            ],
-            "track": {
-              "name": "Uproar (feat. Swizz Beatz)",
-              "id": "5qSM5nQz9sRE31CyrqXhkW"
-            }
-          }
-        },
-        "title": "Uproar (feat. Swizz Beatz)",
-        "album": {
-          "name": "Tha Carter V (Deluxe)"
-        },
-        "artists": [
-          {
-            "name": "Lil Wayne"
-          },
-          {
-            "name": "Swizz Beatz"
-          }
-        ],
         "contributors": {
           "lyricists": [
-            "Avery Chambliss",
-            "Brian Holland",
-            "Dwayne Carter",
-            "Edward Holland",
-            "Kasseem Dean",
-            "Lamont Dozier"
-          ],
-          "composers": [
-            "Lamont Dozier",
-            "Eddie Holland",
-            "Brian Holland",
-            "Swizz Beatz",
-            "Avenue",
-            "Lil Wayne"
+            "Christopher Robert Bear",
+            "Edward Droste",
+            "Daniel Raphael Rossen",
+            "Christopher M. Taylor"
           ]
         },
-        "label": "Young Money Records, Inc.",
-        "duration_ms": 193820,
+        "label": "Warp Records",
+        "duration_ms": 243160,
         "score": 100,
-        "play_offset_ms": 7300,
-        "acrid": "fb3ace23358df1feb81ce92827dd85f9",
         "lyrics": {
           "copyrights": [
-            "Warner/Chappell Music",
-            "Inc.",
-            "Sony/ATV Music Publishing LLC",
-            "Universal Music Publishing Group"
+            "Kobalt Music Publishing Ltd."
           ]
         },
-        "release_date": "2018-09-28",
+        "release_date": "2009-05-24",
+        "play_offset_ms": 11840,
+        "external_metadata": {
+          "spotify": {
+            "album": {
+              "name": "Veckatimest",
+              "id": "6FIFqclBriPCb0SjWDaHIk"
+            },
+            "artists": [
+              {
+                "name": "Grizzly Bear",
+                "id": "2Jv5eshHtLycR6R8KQCdc4"
+              }
+            ],
+            "track": {
+              "name": "Two Weeks",
+              "id": "0iTpQYzJnYgh7kIxyq8A2O"
+            }
+          }
+        },
+        "album": {
+          "name": "Veckatimest"
+        },
+        "acrid": "bf5a908a429e0ab7213accab5eec835d",
+        "title": "Two Weeks",
         "genres": [
           {
-            "name": "Hip Hop"
+            "name": "Alternative"
+          },
+          {
+            "name": "Indie Pop"
+          },
+          {
+            "name": "Rock"
           }
         ],
-        "result_from": 3
-      },
-      {
-        "external_ids": {},
-        "play_offset_ms": 127020,
-        "external_metadata": {},
+        "result_from": 3,
         "artists": [
           {
-            "name": "H3 Music;Paagal Pahaadi"
+            "name": "Grizzly Bear"
           }
-        ],
-        "release_date": "2020-06-26",
-        "acrid": "6369c40ad32b70024a62c3179109fe04",
-        "label": "Pahaadirecords",
-        "title": "Nirbhar Nahi",
-        "duration_ms": 257000,
-        "album": {
-          "name": "KHOJ"
-        },
-        "result_from": 3,
-        "score": 100
+        ]
       }
     ],
-    "timestamp_utc": "2021-01-09 00:29:57"
+    "timestamp_utc": "2021-01-11 21:54:11"
   },
-  "cost_time": 0.053000211715698,
+  "cost_time": 0.026999950408936,
   "result_type": 0
 }
