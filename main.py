@@ -5,7 +5,7 @@ import scipy.io.wavfile as wavf
 import json
 from timeit import default_timer as timer
 import time
-from lrc_kit import ComboLyricProvider, SearchRequest
+from lrc_kit import ComboLyricsProvider, SearchRequest
 import os
 import re
 from dotenv import load_dotenv
@@ -100,9 +100,9 @@ if __name__ == '__main__':
             run_time = result['duration_ms'] / 1000
             print(song, artist)
             search_request = SearchRequest(artist, song)
-            subs, engine = ComboLyricProvider().search(search_request)
+            subs = ComboLyricsProvider().search(search_request)
             if subs:
-                print(f'Found Using Engine "{engine}"')
+                print(f"Found Using Engine '{subs.metadata['provider']}'")
                 break
         if subs is None:
             input('No matches. Next song?')
@@ -113,15 +113,28 @@ if __name__ == '__main__':
         lookahead_time = 2
         song_ended = timer()
         for line in subs.lyrics:
+            passed = True
             # if hasattr(line, 'duration'):
             #     lookahead_time = line.duration
             time_to_line = line.time_seconds - current_time - lookahead_time
             if time_to_line > 0: # Print the line
                 time.sleep(time_to_line)
                 current_time = line.time_seconds - lookahead_time
+            else:
+                passed = False
             m,s = divmod(int(line.time_seconds), 60)
             ts = f'{m}:{s:02}'
-            print(ts, ' '.join(uncensor(w) for w in line.text.split(' ')))
+            if not line.timing:
+                print(ts, ' '.join(uncensor(w) for w in line.text.split(' ')))
+            else:
+                print(ts, ' ')
+                for word in line.timing:
+                    print(word.text)
+                    # print(word.duration)
+                    if passed:
+                        time.sleep(word.duration / 1000)
+                        current_time += word.duration / 1000
+                print()
         current_time += lookahead_time
         if run_time > current_time:
             time.sleep(run_time - current_time)

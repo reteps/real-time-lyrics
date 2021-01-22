@@ -8,68 +8,49 @@
     "music": [
       {
         "external_ids": {},
-        "contributors": {
-          "lyricists": [
-            "Christopher Robert Bear",
-            "Edward Droste",
-            "Daniel Raphael Rossen",
-            "Christopher M. Taylor"
-          ]
-        },
-        "label": "Warp Records",
-        "duration_ms": 243160,
+        "label": "Cult Records, LLC",
+        "duration_ms": 196672,
         "score": 100,
-        "lyrics": {
-          "copyrights": [
-            "Kobalt Music Publishing Ltd."
-          ]
-        },
-        "release_date": "2009-05-24",
-        "play_offset_ms": 11840,
-        "external_metadata": {
-          "spotify": {
-            "album": {
-              "name": "Veckatimest",
-              "id": "6FIFqclBriPCb0SjWDaHIk"
-            },
-            "artists": [
-              {
-                "name": "Grizzly Bear",
-                "id": "2Jv5eshHtLycR6R8KQCdc4"
-              }
-            ],
-            "track": {
-              "name": "Two Weeks",
-              "id": "0iTpQYzJnYgh7kIxyq8A2O"
-            }
-          }
-        },
-        "album": {
-          "name": "Veckatimest"
-        },
-        "acrid": "bf5a908a429e0ab7213accab5eec835d",
-        "title": "Two Weeks",
+        "play_offset_ms": 12320,
         "genres": [
           {
             "name": "Alternative"
-          },
-          {
-            "name": "Indie Pop"
-          },
-          {
-            "name": "Rock"
           }
         ],
-        "result_from": 3,
+        "release_date": "2016-09-30",
+        "external_metadata": {
+          "spotify": {
+            "album": {
+              "name": "City Club",
+              "id": "3el3ICiKfm3Vej87PyC9bd"
+            },
+            "artists": [
+              {
+                "name": "The Growlers",
+                "id": "2RhgnQNC74QoBlaUvT4MEe"
+              }
+            ],
+            "track": {
+              "name": "City Club",
+              "id": "1450yKj0XH0kqRzh75UDA7"
+            }
+          }
+        },
+        "acrid": "3c454acd09369f07761b0a7c9334d1e1",
+        "title": "City Club",
+        "album": {
+          "name": "City Club"
+        },
+        "result_from": 1,
         "artists": [
           {
-            "name": "Grizzly Bear"
+            "name": "The Growlers"
           }
         ]
       }
     ],
-    "timestamp_utc": "2021-01-11 21:54:11"
+    "timestamp_utc": "2021-01-22 19:39:27"
   },
-  "cost_time": 0.026999950408936,
+  "cost_time": 0.40699982643127,
   "result_type": 0
 }
