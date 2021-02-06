@@ -45,6 +45,8 @@ class ExtendedSubs:
         self.loadtime = loadtime
         # self.image = Image.open(requests.get(image, stream=True).raw).convert('LA')
         self.isupdated = True
+    def __str__(self):
+        return f'{self.song} - {self.artist} - {self.currenttime}'
     def gen_frame(self, in_text, obj, use_obj=True):
         image = Image.new("RGBA", (WIDTH,HEIGHT), 'white')
         draw = ImageDraw.Draw(image)
@@ -83,7 +85,7 @@ class ExtendedSubs:
         start = 75
         pos = start
         final = []
-        parts = in_text.split('\n')
+        parts = in_text.split('\n') # list(filter(lambda x:len(x) > 0, ))
         for i in range(len(parts)):
             if i == len(parts) - 2:
                 color = 'red'
@@ -113,9 +115,11 @@ print('Init Providers')
 PROVIDER = lrc_kit.ComboLyricsProvider(lrc_kit.MINIMAL_PROVIDERS + [lrc_kit.Flac123Provider])
 print('Done.')
 class SpotifySubs(Spotify):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):    
         self.current_subs = None
         super().__init__(*args, **kwargs)
+        self.debug_frequency = 2
+        self.debug_counter = 4
     def current_user_playing_subs(self, current_time=0):
         start = timer()
         track = self.current_user_playing_track()
@@ -126,6 +130,10 @@ class SpotifySubs(Spotify):
             runtime = track['item']['duration_ms']
             image = track['item']['album']['images'][2]['url']
             if self.current_subs and (self.current_subs.song == song or self.current_subs.song == song.split('(')[0].split('-')[0].strip()):
+                if self.debug_counter >= self.debug_frequency:
+                    print(abs((current_pos / 1000) - current_time), 'Off')
+                    self.debug_counter = 0
+                self.debug_counter+=1
                 if abs((current_pos / 1000) - current_time) < 2:
                     self.current_subs.isupdated = False
                 else:
@@ -133,17 +141,19 @@ class SpotifySubs(Spotify):
                     self.current_subs.loadtime = timer() - start
                     self.current_subs.isupdated = True
                 return self.current_subs
+            print(f'Searching for {artist}, {song}')
             search_request = lrc_kit.SearchRequest(artist, song)
             subs = PROVIDER.search(search_request)
             if subs is None:
                 if song.split('(')[0].split('-')[0].strip() != song:
                     song = song.split('(')[0].split('-')[0].strip()
+                    print(f'Test 2: Searching for {artist}, {song}')
                     search_request = lrc_kit.SearchRequest(artist, song)
-                    print(search_request.as_string)
                     subs = lrc_kit.ComboLyricsProvider().search(search_request)
                     if subs is None:
                         return song + ' - ' + artist
                 else:
+                    print('Provider search failed.')
                     return song + ' - ' + artist
             else:
                 print(subs.metadata)
@@ -186,6 +196,7 @@ if __name__ == '__main__':
                     time.sleep(2)
                 elif isinstance(possible_subs, str):
                     print(f'Could not find lyrics for: {possible_subs}')
+                    start_sending_frames = timer()
                     image = Image.new("RGBA", (WIDTH,HEIGHT), 'white')
                     draw = ImageDraw.Draw(image)
                     info = ImageFont.truetype('Helvetica-Bold.ttf', 20)
@@ -194,17 +205,17 @@ if __name__ == '__main__':
                     draw.text((WIDTH//2, HEIGHT//2), 'Cannot find any lyrics for this song :/', 'black', font=font2, anchor='mm')
                     frame = np.array(image)
                     mytime = 2
-                    start_sending_frames = timer()
                     while True:
                             if timer() - start_sending_frames > mytime:
                                 break
                             cam.send(frame)
                             cam.sleep_until_next_frame()
-                elif old_subs is None or old_subs.song != possible_subs.song:
+                elif isinstance(old_subs, ExtendedSubs) and old_subs.song == possible_subs.song:
+                    # print('Song ended, but next song hasn\'t started')
+                    time.sleep(1)
+                else: #if old_subs is None or isinstance(old_subs, str) or old_subs.song != possible_subs.song:
                     print('Onto next song')
                     extended_subs = possible_subs
-                else:
-                    time.sleep(2)
 
             else:
                 start_time = extended_subs.currenttime + extended_subs.loadtime
@@ -230,6 +241,7 @@ if __name__ == '__main__':
                             current_time += get_time
                             if temp_subs is None or isinstance(temp_subs, str) or temp_subs.isupdated:
                                 # print('Breaking...')
+                                # old_subs = extended_subs
                                 extended_subs = temp_subs
                                 prematurely_break = True
                                 break
@@ -250,7 +262,8 @@ if __name__ == '__main__':
                         time_since_last_check += current_slept
                         current_time += current_slept
                 if not prematurely_break:
-                    old_subs = extended_subs        
+                    print('Song has ended.')
+                    old_subs = extended_subs
                     extended_subs = None
 '''
 with pyvirtualcam.Camera(width=1280, height=720, fps=30) as cam:
